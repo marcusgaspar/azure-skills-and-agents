@@ -1,0 +1,31 @@
+{
+  "estimate_name": "Synthetic Azure estimate",
+  "currency": "USD",
+  "query_date": "2026-02-01",
+  "total_portal": "105.00",
+  "modules": [
+    {
+      "id": "M001",
+      "actual_monthly_cost": "105.00",
+      "evidence": "Synthetic rendered subtotal."
+    }
+  ],
+  "adjustments": [
+    {
+      "id": "A001",
+      "category": "CURRENT_PRICE",
+      "amount": "5.00",
+      "component_ids": [
+        "C001"
+      ],
+      "evidence": "Synthetic price-date difference."
+    }
+  ],
+  "share_url": "https://azure.com/e/synthetic",
+  "link_validation": {
+    "observed_estimate_name": "Synthetic Azure estimate",
+    "observed_currency": "USD",
+    "observed_total": "105.00",
+    "evidence": "Synthetic new-session validation."
+  }
+}

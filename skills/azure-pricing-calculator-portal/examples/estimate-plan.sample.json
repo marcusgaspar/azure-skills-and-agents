@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "estimate_name": "Synthetic Azure estimate",
+  "currency": "USD",
+  "price_reference_date": "2026-01-31",
+  "purchase_scenario": "PAYG",
+  "tolerance_usd": "0.01",
+  "declared_expected_total": "120.00",
+  "components": [
+    {
+      "id": "C001",
+      "source_reference": "synthetic!A1",
+      "source_service": "Synthetic compute",
+      "azure_product": "Virtual Machines",
+      "display_name": "Synthetic application VM",
+      "region": "Brazil South",
+      "quantity": "744",
+      "unit": "hour",
+      "expected_monthly_cost": "100.00",
+      "status": "PREMISSA",
+      "representability": "DIRECT",
+      "notes": "Synthetic fixture; not an Azure price."
+    },
+    {
+      "id": "C002",
+      "source_reference": "synthetic!A2",
+      "source_service": "Synthetic external model",
+      "azure_product": "Third-party model",
+      "display_name": "Synthetic excluded model usage",
+      "region": "Global",
+      "quantity": "1",
+      "unit": "month",
+      "expected_monthly_cost": "20.00",
+      "status": "CONFIRMADO",
+      "representability": "NOT_REPRESENTABLE",
+      "notes": "Synthetic fixture intentionally absent from the calculator."
+    }
+  ],
+  "calculator_modules": [
+    {
+      "id": "M001",
+      "component_ids": [
+        "C001"
+      ],
+      "calculator_product": "Virtual Machines",
+      "display_name": "Synthetic application VM",
+      "region": "Brazil South",
+      "configuration": {
+        "operatingSystem": "linux",
+        "size": "f4sv2",
+        "count": "1",
+        "hours": "744",
+        "computeBillingOption": "pay-as-you-go"
+      },
+      "derivation": "Direct synthetic mapping from component C001."
+    }
+  ]
+}
